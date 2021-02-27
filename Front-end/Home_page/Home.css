@@ -19,7 +19,43 @@ h4{
 }
 
 h1{
-    font-size:  : 5.4rem;
-    color
+    font-size: 5.4rem;
+    color: aquamarine;
+    font-weight: 800;
 }
 
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-center{
+    justify-content: center;
+    align-items: center;
+    
+}
+.flex-column{
+    display:  flex;
+    flex-direction: column;
+}
+
+.Button{
+    font-size: 1.4rem;
+    padding: 1.4rem;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid;
+    margin-bottom: 1rem;
+    background-color: white;
+    color:darkgreen
+}
+
+.Button:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 0 rgba(86, 185, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
