@@ -1,0 +1,21 @@
+:root{
+    background-color: aliceblue;
+}
+
+.container{
+    margin: auto;
+    margin-top: 10%;
+    height: 600px;
+    width: 600px ; 
+    background-color: lightblue;
+    align-content:
+}
+
+
+.button{
+    margin: auto;
+    margin-top: ;
+    height: 100px;
+    width: 250px;
+    background-color: darkcyan;   
+}
