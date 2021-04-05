@@ -1,21 +1,33 @@
-:root{
-    background-color: aliceblue;
-}
-
-.container{
-    margin: auto;
-    margin-top: 10%;
-    height: 600px;
-    width: 600px ; 
-    background-color: lightblue;
-    align-content:
-}
-
-
-.button{
-    margin: auto;
-    margin-top: ;
-    height: 100px;
-    width: 250px;
-    background-color: darkcyan;   
-}
+body{
+    margin: 0 ; 
+    padding: 0;
+    background: #25252A;
+ 
+ }
+ h1{
+     color: white;
+ }
+ .contaer{
+     width: 200px;
+     padding: 40px;
+     position: absolute;
+     top: 30%;
+     left: 45%;
+     background:#1f1f24 ;
+     text-align: center;
+     border-radius: 30px;
+ }
+ 
+ .box{
+     padding: 20px;
+ }
+ button{
+     height: 50px;
+     width: 150px;
+     text-align: center;
+     background-color: rgb(255, 0, 68);
+ }
+ .content{
+     font-size: 1rem;
+     color: white ;
+ }
