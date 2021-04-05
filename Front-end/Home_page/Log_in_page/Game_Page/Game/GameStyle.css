@@ -7,15 +7,15 @@
 /* progress bar*/
 
 #progressBar {
-    width: 320px;
+    width: 750px;
     height: 64px;
-    border: 4.8px solid #479eeb;
+    border: 4.8px solid rgb(255, 0, 68);
     margin-top: 24px;
 }
 
 #progressBarFull {
     height: 64px;
-    background-color: #479eeb;
+    background-color: rgb(255, 0, 68);
     width: 0%;
 }
 
@@ -25,7 +25,7 @@
 
     border: 25.6px solid #ccdeee;
     border-radius: 50%;
-    border-top: 25.6px solid #479eeb;
+    border-top: 25.6px solid rgb(255, 0, 68);
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -54,4 +54,37 @@
 }
 
 /* game styleing  */
+body{
+    margin:  0 ; 
+    padding: 0;
+    background: #25252A;
+ }
 
+.container{
+    margin: auto;
+    width: 800px;
+    height: 950px;
+    padding: 40px;
+    background:#1f1f24 ;
+    border: 2px solid white;
+    text-align: center;
+    border-radius: 30px;
+    color: white;
+}
+.choice-container{
+    width: 100%;
+    padding: 0;
+    border: 1px solid;
+    border-radius: 20px;
+
+}
+.choice-prefix{
+    padding:  10px;
+    background-color: whitesmoke;
+    color: #25252A;
+}
+
+.choice-text{
+    font-size: large;
+  padding: 1.5rem;
+}
