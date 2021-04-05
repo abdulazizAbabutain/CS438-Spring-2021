@@ -33,10 +33,10 @@ if($_POST) {
 //if correct direct the user to the home page, if not send an error message     
    if($count == 1) {
 
-      header("location: Game.html");
+      header("location:GameManu.html");
    }else {
       echo '<script>alert("Invalid login info");
-      window.location.href="login.html";
+      window.location.href="/Front-end/Home_page/Log_in_page/Login.html";
       </script>';
 
    }
