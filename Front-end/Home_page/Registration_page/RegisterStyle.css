@@ -29,7 +29,6 @@ body{
      border: 3px solid white;
     padding: 15px 10px;
     border-radius: 20px;
-
  }
 
  label{
@@ -44,4 +43,8 @@ body{
     background-color: rgb(255, 0, 68);
     color: white;
     border-radius: 10px;
+}
+
+input, select , textarea{
+    color: white;
 }

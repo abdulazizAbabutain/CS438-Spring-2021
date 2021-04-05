@@ -19,7 +19,9 @@ body{
  ul{
      padding: 0ex;
  }
-
+input, select , textarea{
+    color: white;
+}
  input{
      border: 0;
      background: none;
@@ -29,7 +31,6 @@ body{
      border: 3px solid white;
     padding: 15px 10px;
     border-radius: 20px;
-
  }
 
  label{
