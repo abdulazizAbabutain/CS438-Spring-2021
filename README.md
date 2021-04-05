@@ -38,3 +38,8 @@ this the flow chart sequence from start the application until the user finish fr
 
 <img src="photo/../Photos/FlowChart.png" alt="FlowChart">
 ##test cases
+
+| Test Case ID |   Test Scenario   |                                                 Test Steps                                                 |            Test Data             |         Expected Results          |          Actual Results          | Pass/Fail |
+| :----------: | :---------------: | :--------------------------------------------------------------------------------------------------------: | :------------------------------: | :-------------------------------: | :------------------------------: | :-------: |
+|     UT1      | check login valid |                     go to the website then enter the username and password than submit                     | username = test , password = 123 |          user should log          |          user logged in          |   pass    |
+|     UT2      | check from score  | after passing test TU1 then play game after finishing the game the leaderbord should shows the  user score |     user =test , score = 30      | the score shows the highest score | page that display the user score |   pass    |
