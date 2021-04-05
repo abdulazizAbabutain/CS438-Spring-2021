@@ -1,8 +1,5 @@
 <?php
-
-//user login data
-$username = $_POST['username'];
-$password = $_POST['password'];
+session_start();
 
 //database access data
 $servername = "localhost";
@@ -16,7 +13,9 @@ $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
 if ($conn->connect_error) {
     die("connection failed" . $conn->connect_error);
 }
-
+//store user data on session
+$_SESSION['username'] = $_POST['username'];
+$username = $_SESSION['username'];
 
  //if a data is posted in the form  
 if($_POST) {
@@ -31,13 +30,17 @@ if($_POST) {
    //check the number of rows in the table, if zero, the data is not registerd
    $count = mysqli_num_rows($result);
    
-
 //if correct direct the user to the home page, if not send an error message     
    if($count == 1) {
 
-      header("location: Home.html");
+      header("location: Game.html");
    }else {
-      echo "Invalid login info";
+      echo '<script>alert("Invalid login info");
+      window.location.href="login.html";
+      </script>';
+
    }
-}
+
+   }
+
 ?>
