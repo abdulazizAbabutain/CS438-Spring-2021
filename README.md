@@ -32,12 +32,14 @@ Game screen shot
 <img src="Photos\Game_screanshot.PNG">
 log in screen shot 
 <img src="Photos\LogIn_sreanshot.PNG">
+Database screen shot
+<img src="Photos\Database_creanshot.png">
 
 ## User Interaction
 this the flow chart sequence from start the application until the user finish from it 
 
 <img src="photo/../Photos/FlowChart.png" alt="FlowChart">
-##test cases
+## test cases
 
 | Test Case ID |   Test Scenario   |                                                 Test Steps                                                 |            Test Data             |         Expected Results          |          Actual Results          | Pass/Fail |
 | :----------: | :---------------: | :--------------------------------------------------------------------------------------------------------: | :------------------------------: | :-------------------------------: | :------------------------------: | :-------: |
