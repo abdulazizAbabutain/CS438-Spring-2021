@@ -16,6 +16,10 @@ body{
      border-radius: 30px;
  }
 
+ ul{
+     padding: 0;
+ }
+
  input{
      border: 0;
      background: none;
