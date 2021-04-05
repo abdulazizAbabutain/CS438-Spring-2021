@@ -1,7 +1,43 @@
-.Register_background{
-    margin: auto;
-    width: 50%;
-    align-content: center;
-    background-color: aqua;
-    border: 5px black solid;
+body{
+    margin:  0 ; 
+    padding: 0;
+    background: #25252A;
+ }
+ h1{
+     color: white;
+ }
+ .Register_background{
+     margin: auto;
+     width: 600px;
+     height: 330px;
+     padding: 40px;
+     background:#1f1f24 ;
+     text-align: center;
+     border-radius: 30px;
+ }
+
+ input{
+     border: 0;
+     background: none;
+     display: block;
+     margin: 20px auto;
+     text-align: center;
+     border: 3px solid white;
+    padding: 15px 10px;
+    border-radius: 20px;
+
+ }
+
+ label{
+     color: white;
+     text-align: center;
+ }
+
+ button{
+    height: 30px;
+    width: 70px;
+    text-align: center;
+    background-color: rgb(255, 0, 68);
+    color: white;
+    border-radius: 10px;
 }
