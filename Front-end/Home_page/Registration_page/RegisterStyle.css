@@ -21,19 +21,20 @@ body{
  }
 
  input{
-     border: 0;
-     background: none;
-     display: block;
-     margin: 20px auto;
-     text-align: center;
-     border: 3px solid white;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid white;
     padding: 15px 10px;
     border-radius: 20px;
+    color: white;
  }
 
  label{
-     color: white;
-     text-align: center;
+    color: white;
+    text-align: center;
  }
 
  button{
@@ -43,8 +44,4 @@ body{
     background-color: rgb(255, 0, 68);
     color: white;
     border-radius: 10px;
-}
-
-input, select , textarea{
-    color: white;
 }

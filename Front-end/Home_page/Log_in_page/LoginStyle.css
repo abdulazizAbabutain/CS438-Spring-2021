@@ -19,18 +19,17 @@ body{
  ul{
      padding: 0ex;
  }
-input, select , textarea{
-    color: white;
-}
+
  input{
-     border: 0;
-     background: none;
-     display: block;
-     margin: 20px auto;
-     text-align: center;
-     border: 3px solid white;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid white;
     padding: 15px 10px;
-    border-radius: 20px;
+    border-radius: 20px; 
+    color: white;
  }
 
  label{
