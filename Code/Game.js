@@ -87,12 +87,14 @@ getNewQuestion = () => {
     if (availableQuestions.length == 0 || questionCounter.length >= MAX_QUESTIONS) {
         // localStorage.setItem("mostRecentScore", score);
         /*
+        
         //Send score variable to php to store in databases
         window.location.href = "location.php?score=" + score;
         */
+        document.cookie = "score = " + score;
 
         //Go to the end page 
-        return window.location.assign("GameMenu.html"); //Need to change the end location to (end.html or GameMenu.html)
+        return window.location.assign("leaderboared.php"); //Need to change the end location to (end.html or GameMenu.html)
     }
 
     questionCounter++;
