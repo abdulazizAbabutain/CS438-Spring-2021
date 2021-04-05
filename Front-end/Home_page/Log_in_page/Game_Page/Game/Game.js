@@ -28,43 +28,43 @@ const MAX_QUESTIONS = 10;
 fetch(
     //Get questions from this resource 
     "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple")
-.then( contentResponse => {
-    //Extract the JSON body content from the response
-    return contentResponse.json();
-})
-.then(uploadedQuestions  => {
-    //Check the results
-    //console.log(uploadedQuestions .results);
+    .then(contentResponse => {
+        //Extract the JSON body content from the response
+        return contentResponse.json();
+    })
+    .then(uploadedQuestions => {
+        //Check the results
+        //console.log(uploadedQuestions .results);
 
-    //Questions array will have for every question (question, number of correct answer, choices(1,2,3 and 4))
-    questions = uploadedQuestions .results.map( uploadedQuestion => {
-        //console.log(uploadedQuestion.question);
-        //coordinatedQuestion object will have the question from uploadedQuestion.question
-        const coordinatedQuestion = {
-            question: uploadedQuestion.question,
-            answer: ''
-        };
+        //Questions array will have for every question (question, number of correct answer, choices(1,2,3 and 4))
+        questions = uploadedQuestions.results.map(uploadedQuestion => {
+            //console.log(uploadedQuestion.question);
+            //coordinatedQuestion object will have the question from uploadedQuestion.question
+            const coordinatedQuestion = {
+                question: uploadedQuestion.question,
+                answer: ''
+            };
 
-        //console.log(uploadedQuestion.incorrect_answers);
-        //Get the incorrect answers for this question
-        const answerChoices = [...uploadedQuestion.incorrect_answers];
-        //Make the correct answer get a random place
-        coordinatedQuestion.answer = Math.floor(Math.random() * 3) + 1;
-        answerChoices.splice(coordinatedQuestion.answer -1, 0, uploadedQuestion.correct_answer);
+            //console.log(uploadedQuestion.incorrect_answers);
+            //Get the incorrect answers for this question
+            const answerChoices = [...uploadedQuestion.incorrect_answers];
+            //Make the correct answer get a random place
+            coordinatedQuestion.answer = Math.floor(Math.random() * 3) + 1;
+            answerChoices.splice(coordinatedQuestion.answer - 1, 0, uploadedQuestion.correct_answer);
 
-        //For each choice, add the choice to the coordinatedQuestion Object as follows
-        answerChoices.forEach((choice, index) => {
-            coordinatedQuestion["choice" + (index+1)] = choice;
-        })
-        // console.log(coordinatedQuestion);
-        return coordinatedQuestion;
+            //For each choice, add the choice to the coordinatedQuestion Object as follows
+            answerChoices.forEach((choice, index) => {
+                coordinatedQuestion["choice" + (index + 1)] = choice;
+            })
+            // console.log(coordinatedQuestion);
+            return coordinatedQuestion;
+        });
+        //Start the game
+        startGame();
+    })
+    .catch(err => {
+        console.error(err);
     });
-    //Start the game
-    startGame();
-})
-.catch(err => {
-    console.error(err);
-});
 
 //Start game 
 
@@ -77,7 +77,7 @@ startGame = () => {
     //After loading the question, remove the (loader) and display the question
     loader.classList.add('hidden');
     game.classList.remove("hidden");
-    
+
 };
 
 //Get (new/next) question
@@ -90,9 +90,9 @@ getNewQuestion = () => {
         //Send score variable to php to store in databases
         window.location.href = "location.php?score=" + score;
         */
-       
+
         //Go to the end page 
-        return window.location.assign("GameMenu.html");//Need to change the end location to (end.html or GameMenu.html)
+        return window.location.assign("GameMenu.html"); //Need to change the end location to (end.html or GameMenu.html)
     }
 
     questionCounter++;
@@ -106,7 +106,7 @@ getNewQuestion = () => {
     //Update the question
     question.innerText = currentQuestion.question;
     //For each choice get the data-number from Game.html and then update the choices
-    choices.forEach( choice => {
+    choices.forEach(choice => {
         const number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];
     });
@@ -138,7 +138,7 @@ choices.forEach(choice => {
             getNewQuestion();
         }, 1000);
 
-        
+
     });
 });
 
