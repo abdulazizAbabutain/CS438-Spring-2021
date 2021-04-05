@@ -14,7 +14,7 @@
 }
 
 #progressBarFull {
-    height: 3.4rem;
+    height: 64px;
     background-color: #479eeb;
     width: 0%;
 }
