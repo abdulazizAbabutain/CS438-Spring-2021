@@ -28,35 +28,36 @@ const MAX_QUESTIONS = 10;
 fetch(
     //Get questions from this resource 
     "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple")
-.then( res => {
+.then( contentResponse => {
     //Extract the JSON body content from the response
-    return res.json();
+    return contentResponse.json();
 })
-.then(loadedQuestions => {
+.then(uploadedQuestions  => {
     //Check the results
-    //console.log(loadedQuestions.results);
+    //console.log(uploadedQuestions .results);
 
     //Questions array will have for every question (question, number of correct answer, choices(1,2,3 and 4))
-    questions = loadedQuestions.results.map( loadedQuestion => {
-        //console.log(loadedQuestion.question);
-        //FormattedQuestion object will have the question from loadedQuestion.question
-        const formattedQuestion = {
-            question: loadedQuestion.question
+    questions = uploadedQuestions .results.map( uploadedQuestion => {
+        //console.log(uploadedQuestion.question);
+        //coordinatedQuestion object will have the question from uploadedQuestion.question
+        const coordinatedQuestion = {
+            question: uploadedQuestion.question,
+            answer: ''
         };
 
-        //console.log(loadedQuestion.incorrect_answers);
+        //console.log(uploadedQuestion.incorrect_answers);
         //Get the incorrect answers for this question
-        const answerChoices = [...loadedQuestion.incorrect_answers];
+        const answerChoices = [...uploadedQuestion.incorrect_answers];
         //Make the correct answer get a random place
-        formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;
-        answerChoices.splice(formattedQuestion.answer -1, 0, loadedQuestion.correct_answer);
+        coordinatedQuestion.answer = Math.floor(Math.random() * 3) + 1;
+        answerChoices.splice(coordinatedQuestion.answer -1, 0, uploadedQuestion.correct_answer);
 
-        //For each choice, add the choice to the formattedQuestion Object as follows
+        //For each choice, add the choice to the coordinatedQuestion Object as follows
         answerChoices.forEach((choice, index) => {
-            formattedQuestion["choice" + (index+1)] = choice;
+            coordinatedQuestion["choice" + (index+1)] = choice;
         })
-        //console.log(formattedQuestion);
-        return formattedQuestion;
+        // console.log(coordinatedQuestion);
+        return coordinatedQuestion;
     });
     //Start the game
     startGame();
@@ -117,23 +118,23 @@ getNewQuestion = () => {
 //For each choice in Game.html add this event
 
 choices.forEach(choice => {
-    choice.addEventListener("click", e => {
+    choice.addEventListener("click", c => {
         if (!acceptingAnswers) return;
-        //Get the choice target(location) 
+        // Get the choice target(location) 
         acceptingAnswers = false;
-        const selectedChoice = e.target;
+        const selectedChoice = c.target;
         const selectedAnswer = selectedChoice.dataset["number"];
         //Check in the selected answer is correct or not
-        const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+        const classAction = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
         //If it's correct add bonus to score
-        if (classToApply == "correct") {
-            incrementScore(CORRECT_BONUS);
+        if (classAction == "correct") {
+            incrementAnswerScore(CORRECT_BONUS);
         };
         //Add the (correct/incorrect) class to choice-text
-        selectedChoice.parentElement.classList.add(classToApply);
+        selectedChoice.parentElement.classList.add(classAction);
         //Wait then do this
         setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply);
+            selectedChoice.parentElement.classList.remove(classAction);
             getNewQuestion();
         }, 1000);
 
@@ -143,7 +144,7 @@ choices.forEach(choice => {
 
 //Add bonus to score
 
-incrementScore = num => {
-    score += num;
+incrementAnswerScore = s => {
+    score += s;
     answerScore.innerText = score;
 };
